@@ -14,12 +14,8 @@ LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 EXAMPLE_PATH = os.path.join(os.path.dirname(__file__), "examples")
 
-API_URL = os.getenv("TRY_ON_DIFFUSION_DEMO_API_URL", "http://localhost:8000")
+API_URL = "https://try-on-diffusion.p.rapidapi.com/"
 API_KEY = "ffd59fd390msh937ac7182a38043p1603ebjsn5136f77de6f3"
-
-SHOW_RAPIDAPI_LINK = os.getenv("TRY_ON_DIFFUSION_DEMO_SHOW_RAPIDAPI_LINK", "1") == "1"
-
-CONCURRENCY_LIMIT = int(os.getenv("TRY_ON_DIFFUSION_DEMO_CONCURRENCY_LIMIT", "2"))
 
 logging.basicConfig(level=LOG_LEVEL, format=LOG_FORMAT, datefmt=LOG_DATE_FORMAT)
 
@@ -135,7 +131,6 @@ with gr.Blocks(theme=gr.themes.Soft(), delete_cache=(3600, 3600)) as app:
         ],
         outputs=[result_image, result_details],
         api_name=False,
-        concurrency_limit=CONCURRENCY_LIMIT,
     )
 
     app.title = "Virtual Try-On Diffusion"
