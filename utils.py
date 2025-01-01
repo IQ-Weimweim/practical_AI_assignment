@@ -64,16 +64,3 @@ def image_save_to_result(source_file, result_dir="result"):
     # Move the file
     shutil.move(source_file, destination_path)
     print(f"File save to: {destination_path}")
-
-
-# Example usage (replace with your API key and image paths)
-api_key = "ffd59fd390msh937ac7182a38043p1603ebjsn5136f77de6f3"  # Replace with your actual API key
-person_image_path = "C:\\Users\\iqbal\\Downloads\\person.jpg"
-cloth_image_path = "C:\\Users\\iqbal\\Downloads\\tshirt.jpg"
-
-success = generate_viton_image(person_image_path, cloth_image_path, api_key)
-
-if success:
-  print("VITON image generation successful!")
-else:
-  print("VITON image generation failed.")
